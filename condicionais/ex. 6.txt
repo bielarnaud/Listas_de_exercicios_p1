@@ -1,0 +1,44 @@
+# Inputs
+nome_1 = input()
+p_1 = int(input())
+
+nome_2 = input()
+p_2 = int(input())
+
+nome_3 = input()
+p_3 = int(input())
+
+# Inicio do codigo
+
+if p_1 < p_2 < p_3:
+  print(f'{nome_1} {p_1}')
+  print(f'{nome_2} {p_2}')
+  print(f'{nome_3} {p_3}')
+  
+elif p_1 < p_3 < p_2:
+  print(f'{nome_1} {p_1}')
+  print(f'{nome_3} {p_3}')
+  print(f'{nome_2} {p_2}')
+  
+elif p_2 < p_1 < p_3:
+  print(f'{nome_2} {p_2}')
+  print(f'{nome_1} {p_1}')
+  print(f'{nome_3} {p_3}')  
+  
+elif p_2 < p_3 < p_1:
+  print(f'{nome_2} {p_2}')
+  print(f'{nome_3} {p_3}')
+  print(f'{nome_1} {p_1}')
+  
+elif p_3 < p_1 < p_2:
+  print(f'{nome_3} {p_3}')
+  print(f'{nome_1} {p_1}')
+  print(f'{nome_2} {p_2}')
+
+elif p_3 < p_2 < p_1:
+  print(f'{nome_3} {p_3}')
+  print(f'{nome_2} {p_2}')
+  print(f'{nome_1} {p_1}')
+
+  
+  

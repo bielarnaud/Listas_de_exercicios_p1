@@ -1,0 +1,32 @@
+n = int(input())
+vitorias_s = 0
+vitorias_r = 0
+
+for i in range(n):
+  sh = input()
+  raj = input()
+  
+  if sh == 'lagarto' and raj == 'spock':
+    vitorias_s = vitorias_s + 1
+    
+  elif sh == 'lagarto' and raj == 'tesoura':
+    vitorias_r = vitorias_r + 1
+    
+  elif sh == 'spock' and raj == 'tesoura':
+    vitorias_s = vitorias_s + 1
+    
+  elif sh == 'spock' and raj == 'lagarto':
+    vitorias_r = vitorias_r + 1
+    
+  elif sh == 'tesoura' and raj == 'lagarto':
+    vitorias_s = vitorias_s + 1
+  
+  elif sh == 'tesoura' and raj == 'spock':
+    vitorias_r = vitorias_r + 1
+
+if vitorias_r < vitorias_s:
+  print('BAZINGA! EU SOU O SENHOR DA SALA!')
+elif vitorias_s < vitorias_r:
+  print('ENGOLE ESSA, SHELDON!')
+else:
+  print('Oh não, precisamos de outra rodada.')

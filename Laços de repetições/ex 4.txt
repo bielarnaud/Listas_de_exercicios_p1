@@ -1,0 +1,97 @@
+m = input()
+cont = 0
+
+while cont == 0  and m != 'É o fim da Estrada pra Sheldon Cooper':
+  
+  if m == ('Tinha que ser o engenheiro sem Phd do Wolowitz') or  m == ('Leonard seu anão covarde') or  m == ('Tu é muito burro Raj'):
+    print('Não xingue seus amigos Sheldon!')
+
+  if m == 'Começou a Trabalhar na Caltech':
+    cont = 1
+  
+  m = input()
+  
+  if m == "Bazinga":
+    cont = 0
+
+while cont == 1 and m != 'É o fim da Estrada pra Sheldon Cooper':
+  
+  if m == ('Tinha que ser o engenheiro sem Phd do Wolowitz') or  m == ('Leonard seu anão covarde') or  m == ('Tu é muito burro Raj'):
+    print('Não xingue seus amigos Sheldon!')
+  
+  if m == 'Trabalho sobre a String Theory':
+    cont = 2
+  
+  m = input()
+  
+  if m == "Bazinga":
+    cont = 1
+  
+while cont == 2 and m != 'É o fim da Estrada pra Sheldon Cooper':
+  
+  if m == ('Tinha que ser o engenheiro sem Phd do Wolowitz') or  m == ('Leonard seu anão covarde') or  m == ('Tu é muito burro Raj'):
+    print('Não xingue seus amigos Sheldon!')
+  
+  if m == 'Ganhar o Chancellor de ciência':
+    cont = 3
+  
+  m = input()
+  
+  if m == "Bazinga":
+    cont = 2
+  
+while cont == 3 and m != 'É o fim da Estrada pra Sheldon Cooper':
+  
+  if m == ('Tinha que ser o engenheiro sem Phd do Wolowitz') or  m == ('Leonard seu anão covarde') or  m == ('Tu é muito burro Raj'):
+    print('Não xingue seus amigos Sheldon!')
+
+  if m == 'Pensar na Teoria de Cooper-Hofstader':
+    cont = 4
+  
+  m = input()
+  
+  if m == "Bazinga":
+    cont = 3
+    
+while cont == 4 and m != 'É o fim da Estrada pra Sheldon Cooper':
+  
+  if m == ('Tinha que ser o engenheiro sem Phd do Wolowitz') or  m == ('Leonard seu anão covarde') or  m == ('Tu é muito burro Raj'):
+    print('Não xingue seus amigos Sheldon!')
+
+  if m == 'Criou a Super Assimetria':
+    cont = 5
+  
+  m = input()
+  
+  if m == "Bazinga":
+    cont = 4
+
+while cont == 5 and m != 'É o fim da Estrada pra Sheldon Cooper':
+
+  if m == ('Tinha que ser o engenheiro sem Phd do Wolowitz') or  m == ('Leonard seu anão covarde') or  m == ('Tu é muito burro Raj'):
+    print('Não xingue seus amigos Sheldon!')
+
+  if m == 'Ganhar o Nobel':
+    cont = 6
+    
+  else:
+    m = input()
+  
+  if m == "Bazinga":
+    cont = 5
+
+if cont == 0: 
+  print('Que potencial desperdiçado...')
+  
+elif cont == 1 or cont == 2:
+  print('Tão perto, mas tão longe')
+  
+elif cont == 3 or cont == 4: 
+  print('Não desista Sheldon, você ainda têm muito para alcançar!')
+
+elif cont == 5:
+  print('Nãoooooo, esse momento ia ser seu Sheldon')
+
+elif cont == 6:
+  print('Você conseguiu Sheldon, o Nobel é seu!!!')
+  

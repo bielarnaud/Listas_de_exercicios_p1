@@ -1,0 +1,65 @@
+n = int(input())
+soma = 0
+
+cont_not_fib = 0
+
+n_mult = 0
+primo = False
+
+
+if n > 3:
+  
+  x_ant = int(input())
+  y_ant = int (input())
+  
+  for i in range(1,n):
+    x = int(input())
+    y = int(input())
+    
+    d = int(((x_ant - x)**2 + (y_ant - y)**2)**(0.5))
+    
+    #Verificando o número de distancias dentro da série de fib:
+    ultimo = 1
+    penultimo = 1
+    if d > 2:
+        termo = 3
+        while termo < d:
+            termo = ultimo + penultimo
+            penultimo = ultimo
+            ultimo = termo
+        if termo != d:
+            cont_not_fib += 1
+      
+    soma = soma + d
+      
+    x_ant = x
+    y_ant = y
+    
+    print(f'Distância [star{i} <-> star{i+1}]: {d}')
+
+  #verificando se a soma é primo:
+  
+  for i in range(2, soma):
+      if soma % i == 0:
+          n_mult += 1
+  if n_mult == 0:
+      primo = True
+      
+  # Prints
+  
+  if cont_not_fib == 0 and primo == False:
+      print('Yes! Eu consegui!')
+  elif cont_not_fib == 0 and primo == True:
+      print('Oh my god! Eu vou ganhar o Nobel primeiro que Sheldon!')
+  elif cont_not_fib == 1:
+      print('Oh, não! Eu quase consegui!')
+  elif primo == False and cont_not_fib >= 2:
+      print('Eu vou acabar como o Stuart :/')
+  elif primo == True and cont_not_fib >= 2:
+      print('Pelo menos o programa está funcionando...')
+  
+  
+elif 3 > n > 0:
+    print('Acho que bebi demais, eu juro que tinha mais estrelas!')
+else:
+    print('Isso está quebrado, acho que Howard pode me ajudar.')

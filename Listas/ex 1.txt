@@ -1,0 +1,33 @@
+# entradas
+susp = input()
+
+list_susp = susp.split(',')
+
+while len(list_susp) != 1: #quando tiver 1 ja tem o nome do suspeito
+  ent = input()
+  
+  if ent == 'Não encontrei nada no primeiro suspeito':
+    list_susp.pop(0) #pop 0 pois o primeiro suspeito e o 0
+  
+  elif ent == 'O último da lista está limpo':
+    list_susp.pop(-1) #pop -1 pois o ultimo suspeito e o -1
+    
+  elif ent == 'Procurei por um elemento um pouco mais além na lista e ele está acima de qualquer suspeita':
+    elemento_cental = (len(list_susp)//2) + 1 #tanto par quanto impar vai ser a mesma formula,nao precisa diferenciar
+    list_susp.pop(elemento_cental - 1)
+    
+  elif ent == 'Pelas minhas verificações, não encontrei nada de alarmante no indivíduo que está na seguinte posição:':
+    pos = int(input())
+    list_susp.pop(pos)
+  
+  elif ent == 'Acho que temos mais uma opção a ser analisada…':
+    novo_susp = str(input())
+    list_susp.append(novo_susp)
+    
+  else:
+    print('Isso não estava no combinado, a lista vai permanecer do mesmo jeito')
+  
+
+nome_suspeito = list_susp[0]
+print(f'Acho que encontramos o suspeito. O seu nome é {nome_suspeito}, vamos salvar o Sam!')
+    

@@ -1,0 +1,118 @@
+#INPUTS 
+nome_da_quadrilha = input()
+passo_1 = input()
+passo_2 = input()
+passo_3 = input()
+passo_4 = input()
+passo_5 = input()
+
+p = 0.0
+
+cu = 10
+ba = 50
+pa = 70
+se = 100
+
+#Definindo os boleanos utilizados 
+casamento = False
+p_proibido = False
+
+
+#CALCULO DO PASSO 1
+if passo_1 == "Cumprimento":
+    p = p + 100.0
+elif passo_1 == "Balancê":
+    p = p + ba 
+elif passo_1 == "Passeio":
+    p = p + pa 
+elif passo_1 == "Serrote":
+    p = p + se
+elif passo_1 == "Túnel":
+    p = p*0.9
+elif passo_1 == "Despedida":
+    p = p + 0
+elif passo_1 == "Casamento":
+  casamento = True
+else: 
+  p_proibido = True
+  
+#CALCULO DO PASSO 2
+if passo_2== "Cumprimento":
+    p = p + cu
+elif passo_2== "Balancê":
+    p = p + ba 
+elif passo_2== "Passeio":
+    p = p + pa 
+elif passo_2== "Serrote":
+    p = p + se
+elif passo_2== "Túnel":
+    p = p*0.9
+elif passo_2 == "Despedida":
+    p = p + 0
+elif passo_2 == "Casamento":
+  casamento = True
+else: 
+  p_proibido = True
+
+#CALCULO DO PASSO_3
+if passo_3=="Cumprimento":
+    p = p + cu
+elif passo_3== "Balancê":
+    p = p + ba 
+elif passo_3 == "Passeio":
+    p = p + pa 
+elif passo_3 == "Serrote":
+    p = p + se
+elif passo_3=="Túnel":
+    p = p*0.9
+elif passo_3 == "Despedida":
+    p = p + 0
+elif passo_3 == "Casamento":
+  casamento = True
+else: 
+  p_proibido = True
+
+#CALCULO DO PASSO 4
+if passo_4 == "Cumprimento":
+    p = p + cu
+elif passo_4 == "Balancê":
+    p = p + ba 
+elif passo_4== "Passeio":
+    p = p + pa 
+elif passo_4 == "Serrote":
+    p = p + se
+elif passo_4 == "Túnel":
+    p = p*0.9
+elif passo_4 == "Despedida":
+    p = p + 0
+elif passo_4 == "Casamento":
+  casamento = True
+else: 
+  p_proibido = True
+  
+#CALCULO DO PASSO 5
+if passo_5 == "Cumprimento":
+    p = p + cu
+elif passo_5 == "Balancê":
+    p = p + ba 
+elif passo_5 == "Passeio":
+    p = p + pa 
+elif passo_5 == "Serrote":
+    p = p + se
+elif passo_5 == "Túnel":
+    p = p*0.9
+elif passo_5 == "Despedida":
+    p = p + 35.0
+elif passo_5 == "Casamento":
+  casamento = True
+else: 
+  p_proibido = True
+
+#Caso for casamento dobra
+if casamento == True:
+    p = 2*p
+
+if p_proibido == True:
+    print(f"Poxa, {nome_da_quadrilha}. Por utilizarem de algum passo não permitido vocês tiveram a pontuação zerada.")
+else: 
+  print(f"Parabéns, {nome_da_quadrilha}! Bela apresentação. A pontuação foi de {p:.1f}!")

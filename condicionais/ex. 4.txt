@@ -1,0 +1,37 @@
+# Input dos valores
+cidade_1 = input()
+nota_1 = float(input())
+d_1 = int(input())
+
+cidade_2 = input()
+nota_2= float(input())
+d_2 = int(input())
+
+cidade_3 = input()
+nota_3 = float(input())
+d_3 = int(input())
+
+# Início do código
+
+if nota_1 < 4 and nota_2 < 4 and nota_3 < 4:
+  print("Nota mínima não atingida")
+  
+elif nota_1 > nota_2 and nota_1 > nota_3:
+  print(cidade_1)
+  
+elif nota_2 > nota_1 and nota_2 > nota_3:
+  print(cidade_2)
+  
+elif nota_3 > nota_1 and nota_3 > nota_2:
+  print(cidade_3)
+
+elif nota_1 == nota_2 and nota_1 == nota_3:
+  if d_1 < d_2 and d_1 < d_3:
+    print(cidade_1)
+    
+  elif d_2 < d_1 and d_2 < d_3:
+    print(cidade_2)
+    
+  elif d_3 < d_1 and d_3 < d_2:
+    print(cidade_3)
+    

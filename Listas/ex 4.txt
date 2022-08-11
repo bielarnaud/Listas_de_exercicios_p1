@@ -1,0 +1,107 @@
+n = int(input())
+
+#lendo as linhas e criado a matrix quadrada
+list_linhas = []
+
+for i in range(n):
+  
+  linha = input().split(' ')
+  list_linhas.append(linha)
+
+#descobrindo o par das linhas
+
+somas_linhas = []
+pares_linhas = []
+
+for linha in list_linhas:
+  somas = []
+  pares = []
+  
+  #descobrindo cada soma e seu respectivo par
+  for i in range(len(linha) - 1):
+    soma = int(linha[i]) + int(linha [i+1])
+    par = [linha[i],linha[i+1]]
+    
+    somas.append(soma)
+    pares.append(par)
+  
+  #add a soma e o par as linhas criadas anterormente
+  index = somas.index(max(somas))
+  
+  somas_linhas.append(somas[index])
+  pares_linhas.append(pares[index])
+  
+# com a maior soma de todas as linhas define-se o par das linhas
+
+index = somas_linhas.index(max(somas_linhas))
+par_linhas = pares_linhas[index]
+
+###################################
+
+#criando as colunas
+list_colunas = []
+for i in range(len(list_linhas)):
+  coluna = []
+  for j in range(len(list_linhas)):
+    elemento = list_linhas[j][i]
+    coluna.append(elemento)
+  list_colunas.append(coluna)
+
+#descobrindo o par das colunas
+
+somas_colunas = []
+pares_colunas = []
+
+for coluna in list_colunas:
+  somas = []
+  pares = []
+  
+  #descobrindo cada soma e seu respectivo par
+  for i in range(len(coluna) - 1):
+    soma = int(coluna[i]) + int(coluna [i+1])
+    par = [coluna[i],coluna[i+1]]
+    
+    somas.append(soma)
+    pares.append(par)
+  
+  #add a soma e o par as linhas criadas anterormente
+  index = somas.index(max(somas))
+  
+  somas_colunas.append(somas[index])
+  pares_colunas.append(pares[index])
+  
+# com a maior soma de todas as linhas define-se o par das linhas
+
+index = somas_colunas.index(max(somas_colunas))
+par_colunas = pares_colunas[index]
+
+#########################################
+
+#criando a diagonal principal
+diagonal = []
+for i in range(len(list_linhas)):
+  elemento = list_linhas[i][i]
+  diagonal.append(elemento)
+
+somas = []
+pares = []
+
+#descobrindo cada soma e seu respectivo par
+for i in range(len(diagonal) - 1):
+  soma = int(diagonal[i]) + int(diagonal [i+1])
+  par = [diagonal[i],diagonal[i+1]]
+  
+  somas.append(soma)
+  pares.append(par)
+
+index = somas.index(max(somas))
+par_diagonal = pares[index]
+  
+senha = par_linhas[0] + par_linhas[1] + par_colunas[0] + par_colunas[1] + par_diagonal[0] + par_diagonal[1]
+
+print('Falei que era fácil Dustinzinho...')
+print(f'Pegando todas os números que formam as combinações dos pares de cada sentido temos...')
+print(f'Password: {senha}')
+
+
+

@@ -1,0 +1,11 @@
+X = int(input())
+
+if (X == 17) or (X == 19) or (X == 21) or (X == 23) or (X == 25):
+    print("Nenhum cantor favorito seu cantará nesse dia, portanto gaste até, no máximo, 200 reais!")
+elif (X == 18) or (X == 22) or (X == 24) or (X == 26):
+    print("Um de seus cantores favoritos cantará nesse dia, portanto gaste até, no máximo, 400 reais!")
+elif (X == 20):
+    print("Você escolheu um dia que não irá acontecer nenhum show, tente novamente!")
+else :
+    print("Você escolheu um dia que não irá acontecer nenhum show, tente novamente!")
+  

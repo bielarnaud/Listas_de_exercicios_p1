@@ -1,0 +1,23 @@
+#inputs iniciais:
+
+nome = input()
+n = int(input())
+
+filmes_notas = []
+notas = []
+for i in range(n):
+  filme_nota = input()
+  filmes_notas.append(filme_nota)
+  nota = filme_nota.split(' - ')[1]
+  notas.append(nota)
+
+#definindo  prints
+
+print(f'Os filmes sugeridos por {nome} são:')
+
+for i in range(n):
+  index = notas.index(max(notas))
+  print(filmes_notas[index])
+  
+  notas.pop(index)
+  filmes_notas.pop(index)

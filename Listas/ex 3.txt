@@ -1,0 +1,102 @@
+m = int(input())
+nomes = input()
+
+#criando a lista com os nomes 
+list_nomes = nomes.split(' ')
+
+#criando a lista com os tamanhos das mochilas
+list_tamanhos = []
+
+for i in range(m):
+  
+  tamanho = int(input())
+  list_tamanhos.append(tamanho)
+
+#criando uma lista auxiliar com os 2 itens essenciais para add os novos itens
+
+list_itens = []
+
+for mochila in list_tamanhos:
+  list_itens.append(['Lanterna','Omega 3 da top therm'])
+
+#vai ter como entrada o Numero de itens a ser adicionado, seu nome e qual mochila ira receber esses itens
+
+n_itens = int(input())
+  
+#add os novos itens
+for i in range(n_itens):
+  nome_item = input()
+  n_mochila = int(input())
+  
+  if len(list_itens[n_mochila]) >= list_tamanhos[n_mochila]:
+    print('Mochila cheia. Não vai dar para levar.')
+    
+  else:
+    list_itens[n_mochila].append(nome_item)
+    
+#Ações a serem feitas
+acao = input()
+
+while acao != 'CHEGAMOS NO CIN!':
+  
+  if acao == 'Tirar da mochila':
+    
+    item_acao = input()
+    mochila_acao = int(input())
+    
+    if item_acao in list_itens[mochila_acao]:
+      print(f'{item_acao} usado com sucesso da mochila {mochila_acao}.')
+      list_itens[mochila_acao].remove(item_acao)
+    
+    else:
+      print(f'Você não tem {item_acao} na mochila {mochila_acao}.')
+      
+  elif acao == 'Guardar na mochila':
+    
+    item_acao = input()
+    mochila_acao = int(input())
+    
+    if len(list_itens[mochila_acao]) >= list_tamanhos[mochila_acao]:
+      print('Mochila Y cheia!')
+    
+    else:
+      print(f'{item_acao} adicionado na mochila {mochila_acao}.')
+      list_itens[mochila_acao].append(item_acao)
+  
+  else:
+    print('Ação inválida.')
+  
+  acao = input()
+  
+#organizando output das mochilas
+
+for i in range(m):
+  nome = list_nomes[i]
+  print(f'Mochila de {nome} chegou assim:')
+  
+  for item in list_itens[i]:
+    print(item)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
