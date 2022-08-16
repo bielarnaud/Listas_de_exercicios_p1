@@ -1,0 +1,227 @@
+nome = input()
+
+mapa = []
+
+#Criando a matrix do mapa
+for i in range(8):
+  linha = list(input())
+  mapa.append(linha)
+
+#identificando as posicoes de d, p e o
+  for i in range(len(mapa)):
+    for j in range(len(mapa[i])):
+      
+      if mapa[i][j] == 'p':
+        pos_p = [i,j]
+        
+      if mapa[i][j] == 'd':
+        pos_d = [i,j]
+      
+      if mapa[i][j] == 'o':
+        pos_o = [i,j]
+        
+pos_ant_p = None
+pos_ant_d = None 
+
+while (pos_d != pos_p) and (pos_d != pos_o) and (pos_p != pos_o):
+#for k in range(9):
+  
+  #   criando os passos   #
+  #################################
+  #para as pessoas
+  i = pos_p[0]
+  j = pos_p[1]
+  
+  #passo a direita
+  if mapa[i][j+1] == '.' and pos_ant_p != [i,j+1]:
+    mapa[i][j+1] = 'p'
+    mapa[i][j] = '.'
+    
+  elif mapa[i][j+1] == 'o':
+    mapa[i][j] = '.'
+    
+    for i in range(len(mapa)):
+      linha = ''
+      for j in range(len(mapa[i])):
+        if j == 0:
+          linha = linha + mapa[i][j]
+        else:
+          linha = linha + ' ' + mapa[i][j]
+      print(linha)
+      
+    print(f'UFA!!! Você e {nome} conseguiram escapar do demodog e incendiar o subsolo, agora a Eleven vai conseguir fechar o portal.')
+    break #usando o break pq o demodog n'ao pode dar o ultimo passo 
+  
+  #passo para baixo 
+  elif mapa[i+1][j] == '.' and pos_ant_p != [i+1,j]:
+    mapa[i+1][j] = 'p'
+    mapa[i][j] = '.'
+  
+  elif mapa[i+1][j] == 'o':
+    mapa[i][j] = '.'
+    
+    for i in range(len(mapa)):
+      linha = ''
+      for j in range(len(mapa[i])):
+        if j == 0:
+          linha = linha + mapa[i][j]
+        else:
+          linha = linha + ' ' + mapa[i][j]
+      print(linha)
+      
+    print(f'UFA!!! Você e {nome} conseguiram escapar do demodog e incendiar o subsolo, agora a Eleven vai conseguir fechar o portal.')
+    break
+  
+  #passo para cima
+  elif mapa[i-1][j] == '.' and pos_ant_p != [i-1,j]:
+    mapa[i-1][j] = 'p'
+    mapa[i][j] = '.'
+    
+  elif mapa[i-1][j] == 'o':
+    mapa[i][j] = '.'
+    
+    for i in range(len(mapa)):
+      linha = ''
+      for j in range(len(mapa[i])):
+        if j == 0:
+          linha = linha + mapa[i][j]
+        else:
+          linha = linha + ' ' + mapa[i][j]
+      print(linha)
+      
+    print(f'UFA!!! Você e {nome} conseguiram escapar do demodog e incendiar o subsolo, agora a Eleven vai conseguir fechar o portal.')
+    break
+    
+  #passo para esquerda
+  elif mapa[i][j-1] == '.' and pos_ant_p != [i,j-1]:
+    mapa[i][j-1] = 'p'
+    mapa[i][j] = '.'
+    
+  elif mapa[i][j-1] == 'o':
+    mapa[i][j] = '.'
+    
+    for i in range(len(mapa)):
+      linha = ''
+      for j in range(len(mapa[i])):
+        if j == 0:
+          linha = linha + mapa[i][j]
+        else:
+          linha = linha + ' ' + mapa[i][j]
+      print(linha)
+      
+    print(f'UFA!!! Você e {nome} conseguiram escapar do demodog e incendiar o subsolo, agora a Eleven vai conseguir fechar o portal.')
+    break
+    
+  #para o demodog
+  i = pos_d[0]
+  j = pos_d[1]
+  
+  #passo a direita
+  if mapa[i][j+1] in ('.','p') and pos_ant_d != [i,j+1]:
+    mapa[i][j+1] = 'd'
+    mapa[i][j] = '.'
+  
+  elif mapa[i][j+1] == 'o':
+    mapa[i][j] = '.'
+    
+    for i in range(len(mapa)):
+      linha = ''
+      for j in range(len(mapa[i])):
+        if j == 0:
+          linha = linha + mapa[i][j]
+        else:
+          linha = linha + ' ' + mapa[i][j]
+      print(linha)
+      
+    print(f'Ah não, você e {nome} não foram rápidos o bastante e o demodog passou pelo portal.')
+    break
+  
+  #passo para baixo 
+  elif mapa[i+1][j] in ('.','p') and pos_ant_d != [i+1,j]:
+    mapa[i+1][j] = 'd'
+    mapa[i][j] = '.'
+    
+  elif mapa[i+1][j] == 'o':
+    mapa[i][j] = '.'
+    
+    for i in range(len(mapa)):
+      linha = ''
+      for j in range(len(mapa[i])):
+        if j == 0:
+          linha = linha + mapa[i][j]
+        else:
+          linha = linha + ' ' + mapa[i][j]
+      print(linha)
+      
+    print(f'Ah não, você e {nome} não foram rápidos o bastante e o demodog passou pelo portal.')
+    break
+  
+  #passo para cima
+  elif mapa[i-1][j] in ('.','p') and pos_ant_d != [i-1,j]:
+    mapa[i-1][j] = 'd'
+    mapa[i][j] = '.'
+  
+  elif mapa[i-1][j] == 'o':
+    mapa[i][j] = '.'
+    
+    for i in range(len(mapa)):
+      linha = ''
+      for j in range(len(mapa[i])):
+        if j == 0:
+          linha = linha + mapa[i][j]
+        else:
+          linha = linha + ' ' + mapa[i][j]
+      print(linha)
+      
+    print(f'Ah não, você e {nome} não foram rápidos o bastante e o demodog passou pelo portal.')
+    break
+
+  #passo para esquerda
+  elif mapa[i][j-1] in ('.','p') and pos_ant_d != [i,j-1]:
+    mapa[i][j-1] = 'd'
+    mapa[i][j] = '.'
+    
+  elif mapa[i][j-1] == 'o':
+    mapa[i][j] = '.'
+    
+    for i in range(len(mapa)):
+      linha = ''
+      for j in range(len(mapa[i])):
+        if j == 0:
+          linha = linha + mapa[i][j]
+        else:
+          linha = linha + ' ' + mapa[i][j]
+      print(linha)
+      
+    print(f'Ah não, você e {nome} não foram rápidos o bastante e o demodog passou pelo portal.')
+    break
+    
+  #printando o mapa
+  for i in range(len(mapa)):
+    linha = ''
+    for j in range(len(mapa[i])):
+      if j == 0:
+        linha = linha + mapa[i][j]
+      else:
+        linha = linha + ' ' + mapa[i][j]
+    print(linha)
+  
+  pos_ant_p = pos_p
+  pos_ant_d = pos_d
+  
+  
+  #identificando as novas posicoes de d, p e o
+  for i in range(len(mapa)):
+    for j in range(len(mapa[i])):
+      
+      if mapa[i][j] == 'p':
+        pos_p = [i,j]
+        
+      if mapa[i][j] == 'd':
+        pos_d = [i,j]
+      
+      if mapa[i][j] == 'o':
+        pos_o = [i,j]
+
+if pos_d == pos_p:
+  print(f'Ah não, você e {nome} foram pegos pelo demodog e agora ele vai atravessar o portal e talvez a eleven não consiga salvar todos.')
