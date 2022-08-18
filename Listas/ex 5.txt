@@ -40,14 +40,8 @@ while (pos_d != pos_p) and (pos_d != pos_o) and (pos_p != pos_o):
   elif mapa[i][j+1] == 'o':
     mapa[i][j] = '.'
     
-    for i in range(len(mapa)):
-      linha = ''
-      for j in range(len(mapa[i])):
-        if j == 0:
-          linha = linha + mapa[i][j]
-        else:
-          linha = linha + ' ' + mapa[i][j]
-      print(linha)
+    for linha in mapa:
+	    print(*linha)
       
     print(f'UFA!!! Você e {nome} conseguiram escapar do demodog e incendiar o subsolo, agora a Eleven vai conseguir fechar o portal.')
     break #usando o break pq o demodog n'ao pode dar o ultimo passo 
@@ -60,14 +54,8 @@ while (pos_d != pos_p) and (pos_d != pos_o) and (pos_p != pos_o):
   elif mapa[i+1][j] == 'o':
     mapa[i][j] = '.'
     
-    for i in range(len(mapa)):
-      linha = ''
-      for j in range(len(mapa[i])):
-        if j == 0:
-          linha = linha + mapa[i][j]
-        else:
-          linha = linha + ' ' + mapa[i][j]
-      print(linha)
+    for linha in mapa:
+	    print(*linha)
       
     print(f'UFA!!! Você e {nome} conseguiram escapar do demodog e incendiar o subsolo, agora a Eleven vai conseguir fechar o portal.')
     break
@@ -80,14 +68,8 @@ while (pos_d != pos_p) and (pos_d != pos_o) and (pos_p != pos_o):
   elif mapa[i-1][j] == 'o':
     mapa[i][j] = '.'
     
-    for i in range(len(mapa)):
-      linha = ''
-      for j in range(len(mapa[i])):
-        if j == 0:
-          linha = linha + mapa[i][j]
-        else:
-          linha = linha + ' ' + mapa[i][j]
-      print(linha)
+    for linha in mapa:
+	    print(*linha)
       
     print(f'UFA!!! Você e {nome} conseguiram escapar do demodog e incendiar o subsolo, agora a Eleven vai conseguir fechar o portal.')
     break
@@ -100,14 +82,8 @@ while (pos_d != pos_p) and (pos_d != pos_o) and (pos_p != pos_o):
   elif mapa[i][j-1] == 'o':
     mapa[i][j] = '.'
     
-    for i in range(len(mapa)):
-      linha = ''
-      for j in range(len(mapa[i])):
-        if j == 0:
-          linha = linha + mapa[i][j]
-        else:
-          linha = linha + ' ' + mapa[i][j]
-      print(linha)
+    for linha in mapa:
+	    print(*linha)
       
     print(f'UFA!!! Você e {nome} conseguiram escapar do demodog e incendiar o subsolo, agora a Eleven vai conseguir fechar o portal.')
     break
@@ -124,14 +100,8 @@ while (pos_d != pos_p) and (pos_d != pos_o) and (pos_p != pos_o):
   elif mapa[i][j+1] == 'o':
     mapa[i][j] = '.'
     
-    for i in range(len(mapa)):
-      linha = ''
-      for j in range(len(mapa[i])):
-        if j == 0:
-          linha = linha + mapa[i][j]
-        else:
-          linha = linha + ' ' + mapa[i][j]
-      print(linha)
+    for linha in mapa:
+	    print(*linha)
       
     print(f'Ah não, você e {nome} não foram rápidos o bastante e o demodog passou pelo portal.')
     break
@@ -144,14 +114,8 @@ while (pos_d != pos_p) and (pos_d != pos_o) and (pos_p != pos_o):
   elif mapa[i+1][j] == 'o':
     mapa[i][j] = '.'
     
-    for i in range(len(mapa)):
-      linha = ''
-      for j in range(len(mapa[i])):
-        if j == 0:
-          linha = linha + mapa[i][j]
-        else:
-          linha = linha + ' ' + mapa[i][j]
-      print(linha)
+    for linha in mapa:
+	    print(*linha)
       
     print(f'Ah não, você e {nome} não foram rápidos o bastante e o demodog passou pelo portal.')
     break
@@ -164,14 +128,8 @@ while (pos_d != pos_p) and (pos_d != pos_o) and (pos_p != pos_o):
   elif mapa[i-1][j] == 'o':
     mapa[i][j] = '.'
     
-    for i in range(len(mapa)):
-      linha = ''
-      for j in range(len(mapa[i])):
-        if j == 0:
-          linha = linha + mapa[i][j]
-        else:
-          linha = linha + ' ' + mapa[i][j]
-      print(linha)
+    for linha in mapa:
+	    print(*linha)
       
     print(f'Ah não, você e {nome} não foram rápidos o bastante e o demodog passou pelo portal.')
     break
@@ -184,27 +142,15 @@ while (pos_d != pos_p) and (pos_d != pos_o) and (pos_p != pos_o):
   elif mapa[i][j-1] == 'o':
     mapa[i][j] = '.'
     
-    for i in range(len(mapa)):
-      linha = ''
-      for j in range(len(mapa[i])):
-        if j == 0:
-          linha = linha + mapa[i][j]
-        else:
-          linha = linha + ' ' + mapa[i][j]
-      print(linha)
+    for linha in mapa:
+	    print(*linha)
       
     print(f'Ah não, você e {nome} não foram rápidos o bastante e o demodog passou pelo portal.')
     break
     
   #printando o mapa
-  for i in range(len(mapa)):
-    linha = ''
-    for j in range(len(mapa[i])):
-      if j == 0:
-        linha = linha + mapa[i][j]
-      else:
-        linha = linha + ' ' + mapa[i][j]
-    print(linha)
+  for linha in mapa:
+	    print(*linha)
   
   pos_ant_p = pos_p
   pos_ant_d = pos_d
